@@ -1,0 +1,22 @@
+{
+  "name": "lodown-jameseaster",
+  "version": "1.0.0",
+  "description": "My lodown library",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "istanbul cover _mocha -- test/ -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jameseaster/lodown.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jameseaster/lodown/issues"
+  },
+  "homepage": "https://github.com/jameseaster/lodown#readme"
+}
