@@ -3,7 +3,7 @@
 // YOU KNOW WHAT TO DO //
 
 /**
- * idenity: Return the given value unaltered.
+ * identity: Return the given value unaltered.
  * 
  * @param {Any Value} value: Can be any datatype
  * 
@@ -18,7 +18,7 @@ module.exports.identity = identity;
 /**
  * typeOf: Returns the type of the argument's value as a string
  * 
- * @param {Any Value) value: Can be any datatype
+ * @param {Any Value} value: Can be any datatype
  * 
  * @return {String}: The name of value written as a string
  */
@@ -80,7 +80,7 @@ module.exports.last = last;
  * @param {Any Value} val: The value to search for in arr
  * 
  * @return {Number}: The index of the array that is the first occurance
- * of val
+ * of val. If arr[i] never === val, the value of -1 is returned.
  */
 function indexOf(arr, val){
     for(let i = 0; i < arr.length; i++) if(arr[i] === val) return i;
@@ -223,7 +223,7 @@ module.exports.partition = partition;
 * key values are passed through the given function
 * @param {Function} func: The function that is called on each element or key value
 * 
-* @result {Array} newArray: An array that is returned holding all of the values
+* @return {Array} newArray: An array that is returned holding all of the values
 * that resulted from passing elements or key values through the given function
 */
 function map(collection, func){
@@ -238,7 +238,7 @@ module.exports.map = map;
 * pluck: Returns an array containing the value of prop for every element in array
 * 
 * @param {Array of Objects} array: an array of objects
-* @param {A property} prop: the name of the property to retrieve value from
+* @param {String} prop: the name of the property to retrieve value from
 * 
 * @result {Array}: An array consisting of the property values from each object
 */
@@ -251,15 +251,15 @@ module.exports.pluck = pluck;
 * every: Calls a function on every element of collection with the parameters:
 *   Collection === Array: current element, its index, array
 *   Collection === Object: current value, current key, object
-* Return false if any values returned from function are false, otherwise return true. 
-* If function is not provided return false if any elements of collection are false,
+* Then every checks for the truthyness and falsyness of each value from collection. 
+* If function is not provided return false if any elements of collection are falsy,
 * otherwise return true.
 * 
 * @param {Collection} collection: The collection of values to call the given function
-* on then to test if any of the returned values are false.
+* on then to test if any of the returned values are falsy.
 * @param {Function} func: The function to call on each element of collection
 * 
-* @result {Boolean} answer: Returns true unless any falsey values are found
+* @result {Boolean} answer: Returns true unless any falsy values are found
 */
 function every(collection, func){
     let answer = true;
@@ -281,12 +281,12 @@ module.exports.every = every;
 * some: Calls a function on every element of collection with the parameters:
 *   Collection === Array: current element, its index, array
 *   Collection === Object: current value, current key, object
-* Return true if any values returned from function are true, otherwise return false. 
-* If function is not provided return true if any elements of collection are true,
+* Some then checks for the truthyness or falsyness of each value from collection. 
+* If function is not provided return true if any elements of collection are truthy,
 * otherwise return false.
 * 
 * @param {Collection} collection: The collection of values to call the given function
-* on then to test if any of the returned values are true.
+* on then to test if any of the returned values are truthy.
 * @param {Function} func: The function to call on each element of collection
 * 
 * @result {Boolean} answer: Returns false unless any truthy values are found
